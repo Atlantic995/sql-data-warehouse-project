@@ -1,6 +1,25 @@
--- Script that truncates and inserts all tables from bronze level to the silver
+/*-- Script that truncates and inserts all tables from bronze level to the silver
 -- At the same time it perforsm Cleansing and Standardisation
---EXECUTE silver.load_silver
+-- EXECUTE silver.load_silver
+#########################################################
+Stored Procedure: Load Silver Layer (Bronze -> Silver)
+#########################################################
+Script Purpose:
+	This stored procedure performs the ETL (Extract, Transform, Load) process to
+		populate silver schema tables, from the bronze schema. 
+Actions Performed:
+	- Truncates Silver tables 
+	- Inserts, Transforms and Cleans data from Bronze into Silver tables
+
+Parameters:
+	None.
+	This stored procedure does not accept any parameters.
+
+Usage:
+
+ EXECUTE silver.load_silver
+#########################################################
+*/
 
 CREATE OR ALTER PROCEDURE silver.load_silver AS
 BEGIN
